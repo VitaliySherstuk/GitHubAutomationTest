@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="24083" started-at="2017-03-05T19:49:48Z" finished-at="2017-03-05T19:50:12Z">
+    <groups>
+    </groups>
+    <test name="SampleTestOne" duration-ms="24083" started-at="2017-03-05T19:49:48Z" finished-at="2017-03-05T19:50:12Z">
+      <class name="TestClassTwo">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestClassTwo@6bf256fa]" name="setUp" is-config="true" duration-ms="3798" started-at="2017-03-05T22:50:04Z" finished-at="2017-03-05T22:50:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testTest()[pri:0, instance:TestClassTwo@6bf256fa]" name="testTest" duration-ms="3439" started-at="2017-03-05T22:50:07Z" finished-at="2017-03-05T22:50:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTest -->
+        <test-method status="PASS" signature="finishWork()[pri:0, instance:TestClassTwo@6bf256fa]" name="finishWork" is-config="true" duration-ms="1407" started-at="2017-03-05T22:50:11Z" finished-at="2017-03-05T22:50:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finishWork -->
+      </class> <!-- TestClassTwo -->
+      <class name="TestClassOne">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestClassOne@79698539]" name="setUp" is-config="true" duration-ms="4831" started-at="2017-03-05T22:49:48Z" finished-at="2017-03-05T22:49:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="checkSignUp()[pri:0, instance:TestClassOne@79698539]" name="checkSignUp" duration-ms="3115" started-at="2017-03-05T22:49:53Z" finished-at="2017-03-05T22:49:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkSignUp -->
+        <test-method status="PASS" signature="checkLoginingStepOne()[pri:0, instance:TestClassOne@79698539]" name="checkLoginingStepOne" duration-ms="2565" started-at="2017-03-05T22:49:56Z" finished-at="2017-03-05T22:49:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkLoginingStepOne -->
+        <test-method status="PASS" signature="checkLoginingStepTwo()[pri:0, instance:TestClassOne@79698539]" name="checkLoginingStepTwo" duration-ms="801" started-at="2017-03-05T22:49:59Z" finished-at="2017-03-05T22:49:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkLoginingStepTwo -->
+        <test-method status="PASS" signature="checkLoginingStepThree()[pri:0, instance:TestClassOne@79698539]" name="checkLoginingStepThree" duration-ms="1430" started-at="2017-03-05T22:49:59Z" finished-at="2017-03-05T22:50:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkLoginingStepThree -->
+        <test-method status="PASS" signature="checkSignOut()[pri:0, instance:TestClassOne@79698539]" name="checkSignOut" duration-ms="1242" started-at="2017-03-05T22:50:01Z" finished-at="2017-03-05T22:50:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkSignOut -->
+        <test-method status="PASS" signature="finishWork()[pri:0, instance:TestClassOne@79698539]" name="finishWork" is-config="true" duration-ms="1441" started-at="2017-03-05T22:50:02Z" finished-at="2017-03-05T22:50:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finishWork -->
+      </class> <!-- TestClassOne -->
+    </test> <!-- SampleTestOne -->
+  </suite> <!-- Suite -->
+</testng-results>

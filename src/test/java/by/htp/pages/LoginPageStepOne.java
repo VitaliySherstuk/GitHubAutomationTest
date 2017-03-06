@@ -1,5 +1,6 @@
 package by.htp.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,6 +25,7 @@ public class LoginPageStepOne extends AbstractPage {
 	@FindBy(xpath="//button[@id='signup_button']")
 	private WebElement buttonCreateAccount;
 	
+	
 	public LoginPageStepOne(WebDriver driver)
 	{
 		super(driver);
@@ -41,9 +43,13 @@ public class LoginPageStepOne extends AbstractPage {
 		inputUserName.sendKeys(userName);
 		inputEmailAddres.sendKeys(userEmailAddres);
 		inputPassword.sendKeys(userPassword);
-		buttonCreateAccount.click();
+		
 	}
 	
+	public void clickButtonCreateAccount()
+	{
+		buttonCreateAccount.click();
+	}
 	
 	
 	@Override

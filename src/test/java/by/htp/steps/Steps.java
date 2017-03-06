@@ -9,6 +9,8 @@ import by.htp.pages.LoginPageDashboard;
 import by.htp.pages.LoginPageStepOne;
 import by.htp.pages.LoginPageStepThree;
 import by.htp.pages.LoginPageStepTwo;
+import by.htp.pages.PageFinishCreateRepository;
+import by.htp.pages.PageJoin;
 
 public class Steps {
 
@@ -44,15 +46,16 @@ public class Steps {
 		LoginPageStepOne stepOne = new LoginPageStepOne(driver);
 		stepOne.openPage();
 		stepOne.logining(userName, userEmailAddres, userPassword);
-		
+		stepOne.clickButtonCreateAccount();
 	}
+	
+	
 	
 	public boolean isLoginedIsStepOne(String headerText, String userText)
 	{
 		LoginPageStepTwo stepTwo = new LoginPageStepTwo(driver);
 		String headerTitle = stepTwo.getHeaderTitle();
 		String userTitle = stepTwo.getParagraphTitleUser();
-	//	String userTitleMenu = stepTwo.getTitleUser();
 		if((headerTitle.equals(headerText))&&(userTitle.equals(userText)))
 		{
 			return true;
@@ -68,11 +71,19 @@ public class Steps {
 	{
 		LoginPageStepTwo stepTwo = new LoginPageStepTwo(driver);
 		stepTwo.clickRaddioButton();
-		stepTwo.clickButtomContinue();
+		stepTwo.clickButtonContinue();
 		LoginPageStepThree stepThree = new LoginPageStepThree(driver);
 
 		return stepThree.getTextLink().equals(linkText);
 	}
+	
+	public void clickSignOutLoginPageStepTwo()
+	{
+		LoginPageStepTwo stepTwo = new LoginPageStepTwo(driver);
+//		stepTwo.getTitleUser();
+		stepTwo.clickButtonSignOut();
+	}
+	
 	
 	public boolean isEndLogined(String textButtonReadGuide, String textButtonStartProject, String user)
 	{
@@ -92,7 +103,26 @@ public class Steps {
 		
 	}
 	
-	public boolean clickSignOut(String textSignIn, String textSignUp, String textSignUpForGitHub)
+	public boolean isEndLoginedAddPersonalInformation(String information, String textButtonReadGuide, String textButtonStartProject, String user)
+	{
+		LoginPageStepTwo stepTwo = new LoginPageStepTwo(driver);
+		stepTwo.clickButtonContinue();
+		LoginPageStepThree stepThree = new LoginPageStepThree(driver);
+		stepThree.clickButtonSubmit();
+		LoginPageDashboard dashboard = new LoginPageDashboard(driver);
+		
+		if((dashboard.getButtonReadGuide().equals(textButtonReadGuide)) && (dashboard.getButtonStartProject().equals(textButtonStartProject))
+				&& (dashboard.getTitleUser().equals(user)))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		} 
+	}
+	
+	public boolean clickSignOutPageDashboard(String textSignIn, String textSignUp, String textSignUpForGitHub)
 	{
 		LoginPageDashboard dashboard = new LoginPageDashboard(driver);
 		dashboard.clickSignOut();
@@ -108,6 +138,29 @@ public class Steps {
 		}
 	}
 	
+	public boolean isCreateNewRepository(String headerTitle)
+	{
+		LoginPageDashboard dashboard = new LoginPageDashboard(driver);
+		dashboard.clickButtonStartProject();
+		PageFinishCreateRepository createRepository = new PageFinishCreateRepository(driver);
+		
+		return createRepository.getHeaderTitle().equals(headerTitle);
+	}
 	
+	public boolean isErrorForbiddenSymbol(String errorMessage, String textErrorMessage)
+	{
+		PageJoin pageJoin = new PageJoin(driver);
+		if((pageJoin.getErrorMessage().equals(errorMessage))&&(pageJoin.getTextErrorMesage().equals(textErrorMessage)))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		
+	}
+	
+
 	
 }

@@ -20,6 +20,9 @@ public class TestClassOne {
 	private final String HEADER_USER = "@" + USER;
 	private final String BUTTON_READ_GUIDE = "Read the guide";
 	private final String BUTTON_START_PROJECT = "Start a project";
+	private final String LINK_AUTORISATION = "Sign in";
+	private final String LINK_REGISTRATION = "Sign up";
+	private final String BUTTON_REGISTRATION = "Sign up for GitHub";
 	
 	@BeforeClass
 	public void setUp()
@@ -59,7 +62,7 @@ public class TestClassOne {
 	@Test(priority=5)
 	public void checkSignOut()
 	{
-		Assert.assertTrue(steps.clickSignOut("Sign in", "Sign up", "Sign up for GitHub"));
+		Assert.assertTrue(steps.clickSignOutPageDashboard(LINK_AUTORISATION, "LINK_REGISTRATION", BUTTON_REGISTRATION));
 	}
 	
 	

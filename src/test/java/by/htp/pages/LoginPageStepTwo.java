@@ -16,11 +16,14 @@ public class LoginPageStepTwo extends AbstractPage{
 	@FindBy(xpath = "//h1[text()='Welcome to GitHub']")
 	private WebElement headerTitle;
 	
+	@FindBy(xpath = "//img[@class='avatar']")
+	private WebElement dropDownMenu;
+	
 	@FindBy(xpath = "//div[contains(text(), 'Signed in as')]/strong")
 	private WebElement titleUser;
 	
-	@FindBy(xpath = "//img[@class='avatar']")
-	private WebElement dropDownMenu;
+	@FindBy(xpath = "//form[@class='logout-form']/button[contains(text(), 'Sign out')]")
+	private WebElement buttonSignOut;
 	
 	@FindBy(xpath="//p[@class='lead']/strong")
 	private WebElement paragraphTitleUser;
@@ -56,7 +59,7 @@ public class LoginPageStepTwo extends AbstractPage{
 		return paragraphTitleUser.getText();
 	}
 	
-	public void clickButtomContinue()
+	public void clickButtonContinue()
 	{
 		buttonContinue.click();
 	}
@@ -64,6 +67,13 @@ public class LoginPageStepTwo extends AbstractPage{
 	public void clickRaddioButton()
 	{
 		radioButton.click();
+	}
+	
+	
+	public void clickButtonSignOut()
+	{
+		//((JavascriptExecutor) driver).executeScript("document.querySelectorAll('li.dropdown:nth-child(3) > div:nth-child(2)')[0].style.display='block'", dropDownMenu);
+		buttonSignOut.click();
 	}
 	
 	@Override

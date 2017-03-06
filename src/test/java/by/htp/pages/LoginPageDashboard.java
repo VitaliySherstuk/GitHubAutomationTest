@@ -16,7 +16,7 @@ public class LoginPageDashboard extends AbstractPage {
 	@FindBy(xpath = "//img[@class='avatar']")
 	private WebElement dropDownMenu;
 	
-	@FindBy(xpath = "//a[@class='btn shelf-cta ml-3']")
+	@FindBy(xpath = "//a[text()='Start a project']")
 	private WebElement buttonStartProject;
 	
 	@FindBy(xpath = "//a[@class='btn btn-primary shelf-cta']")
@@ -24,6 +24,7 @@ public class LoginPageDashboard extends AbstractPage {
 	
 	@FindBy(xpath = "//form[@class='logout-form']/button[contains(text(), 'Sign out')]")
 	private WebElement buttonSignOut;
+
 	
 	public LoginPageDashboard(WebDriver driver)
 	{
@@ -40,7 +41,14 @@ public class LoginPageDashboard extends AbstractPage {
 	
 	public String getButtonStartProject()
 	{
+		
 		return buttonStartProject.getText();
+	}
+	
+	public void clickButtonStartProject()
+	{
+		((JavascriptExecutor) driver).executeScript("document.querySelectorAll('.modal-backdrop')[0].style.display='block'");
+		buttonStartProject.click();
 	}
 	
 	public String getButtonReadGuide()

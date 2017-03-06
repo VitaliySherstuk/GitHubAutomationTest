@@ -4,6 +4,9 @@
 		<classes>
 			<class name="TestClassOne"/>
 			<class name="TestClassTwo"/>
+			<class name="TestClassThree"/>
+			<class name="TestClassFour"/>
+			<class name="TestClassFive"/>
 		</classes>
 	</test>
 </suite>

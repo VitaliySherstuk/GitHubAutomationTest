@@ -1,21 +1,19 @@
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import by.htp.generator.GeneratorClass;
 import by.htp.steps.Steps;
 
-
-public class TestClassTwo {
+public class TestClassThree {
 
 	private Steps steps;
-	private final String USER_MAX_SIZE = GeneratorClass.generateWord(39);
+	private final String USER = GeneratorClass.generateWord(8);
 	private final String EMAIL = GeneratorClass.generateWord(5)+ "@yopmail.com";
-	private final String PASSWORD = "Aa12345";
-	private final String HEADER_USER = "@" + USER_MAX_SIZE;
+	private final String PASSWORD_MAX_SIZE = GeneratorClass.generateWord(72);
 	private final String HEADER_LOGINED = "Welcome to GitHub";
+	private final String HEADER_USER = "@" + USER;
 	
 	@BeforeClass
 	public void setUp()
@@ -24,16 +22,13 @@ public class TestClassTwo {
 		steps.initBrowser();
 	}
 	
-	
 	@Test
-	public void checkEnterMaxSizeUsername()
+	public void checkEnterMaxSizePassword()
 	{
-		steps.createNewUser(USER_MAX_SIZE, EMAIL, PASSWORD);
+		steps.createNewUser(USER, EMAIL, PASSWORD_MAX_SIZE);
 		Assert.assertTrue(steps.isLoginedIsStepOne(HEADER_LOGINED, HEADER_USER));
 		
 	}
-	
-
 	
 	@AfterClass
 	public void finishWork()

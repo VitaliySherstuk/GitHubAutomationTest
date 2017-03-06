@@ -24,6 +24,24 @@ public class LoginPageStepThree extends AbstractPage {
 	@FindBy(xpath = "//input[@name='commit']")
 	private WebElement buttonSubmit;
 	
+	@FindBy(xpath = "//div[@role='main']")
+	private WebElement divMain;
+	
+	@FindBy(xpath = "//input[@id='answers_98_choice_461']")
+	private WebElement radioButtonNewToProgramming;
+	
+	@FindBy(xpath = "//input[@id='answers_99_choice_468']")
+	private WebElement radioButtonSchoolProject; 
+	
+	@FindBy(xpath = "//input[@id='answers_99_choice_466']")
+	private WebElement radioButtonProjectManagement;
+	
+	@FindBy(xpath = "//input[@id='answers_100_choice_473']")
+	private WebElement radioButtonOtherInformation;
+	
+	@FindBy(xpath = "//input[@id='answers_100_other']")
+	private WebElement inputOtherInformation;
+	
 	public LoginPageStepThree(WebDriver driver)
 	{
 		super(driver);
@@ -32,6 +50,7 @@ public class LoginPageStepThree extends AbstractPage {
 	
 	public String getHeaderTitle()
 	{
+		
 		return headerTitle.getText();
 	}
 	
@@ -52,13 +71,43 @@ public class LoginPageStepThree extends AbstractPage {
 	
 	public void clickButtonSubmit()
 	{
-		buttonSubmit.click();
-		
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", buttonSubmit);
 	}
 	
 	public void clickLink()
 	{
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", buttonSubmit);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", linkSkipStep);
+	}
+	
+	public void clickDivMain()
+	{
+		((JavascriptExecutor)driver).executeScript("document.querySelectorAll('.modal-backdrop')[0].style.display='block';", divMain);
+	}
+	
+	public void clickRadioButtonNewToProgramming()
+	{
+		radioButtonNewToProgramming.click();
+
+	}
+	
+	public void clickRadioButtonScoolProject()
+	{
+		radioButtonSchoolProject.click();
+	}
+	
+	public void clickRadioButtonProjectManagement()
+	{
+		radioButtonProjectManagement.click();
+	}
+	
+	public void clickRadioButtonOtherInformation()
+	{
+		radioButtonOtherInformation.click();
+	}
+	
+	public void clickInputOtherInformation(String information)
+	{
+		inputOtherInformation.sendKeys(information);
 	}
 	
 	@Override
